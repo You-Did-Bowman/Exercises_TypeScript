@@ -1,46 +1,34 @@
-/* ---------------- Survivor Ep 5 ------------------
+/* ------------ Learning TS: Classes & Interfaces. Setters
 
-** Overview **
-Given an array of strings (to be interpreted as a 2D array of letters and spaces), find the groups of adjacent letters, remove all letters in the board that can be reached from any letter of another group and return the remaining letters in the array, in any order (see details below).
+*** Overview ***
+In "Learning TypeScript. Classes & Interfaces. Getters", we learned that if we knew all the dimensions (i.e. length, width, height) of a cuboid, we could easily work out its corresponding volume and surface area. The way we achieved this in our code was by the use of getters which automatically computed the volume and surface area of the cuboid whenever either one of length, width, height changed. However, in the previouos exercise, one thing we could not do is define setters for surface area or volume of a cuboid because for a given volume/SA, there were an infinite number of possibilities to the dimensions of the cuboid.
+However, for cubes (a special type of cuboid), since their length, width and height are always the same, it is possible to figure out the side length of a cube given its surface area and/or volume. Therefore, in this Kata, you will be asked to define setters as well as getters for both the surface area and volume of a cube.
 
-** Details **
-- All letters that form a group should have at least one vertical or horizontal link to any adjacent letter.
-- The number of characters in a group defines the range for each letter in that group.
-- A letter of one group can remove any letter from another group that is in range using Chebyshev distance (meaning: moving vertically, horizontally or diagonally at each step).
-- All letters are removed simultaneously for all groups.
-- The output is a string containing all remaining characters at the end, in any order.
+*** Task ***
+You're given the ICuboid interface. Define a class Cube that implements ICuboid. Constructor function of Cube takes exactly one parameter length and stores the value of the argument into this.length. You will then define both a getter and a setter for the surfaceArea and volume of the cube.
 
-** Notes **
-- The strings in the list can be of different lengths.
-- Strings will only contain spaces and lowercase letters (possibly duplicated).
+*** Articles of Interest ***
+Below are some articles of interest that may help you complete this Kata:
+- Setters - Mozilla Developer: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set
+- What are getters and setters? - Stack Overflow: https://stackoverflow.com/questions/28222276/what-are-getters-and-setters-for-in-ecmascript-6-classes
+- ES6 Classes Intro (includes section on getters and setters): https://exploringjs.com/es6/ch_classes.html
 
-** Examples **
-
-Input: ["axz", "tb", "ch", "  gt"]:
-"axz"
-"tb"
-"ch"
-"··gt"
-
-The output would be "axz": axztbch and gt are two groups of adjacent letters, with respective sizes of 7 and 2.
-
-Input ["z", "w", "", "     x  ", "agd", "", "", "", "klkp"]:
-"z"
-"w"
-""
-"·····x··"
-"agd"
-""
-""
-""
-"klkp"
-
-The output would be "zklkp" (in any order): zw, x, agd and klkp are four groups of adjacent letters. Note that:
-- Letters are removed even if they are reached through empty (parts of) strings
-- From the first group, only w is deleted since z is too far from any letter of the agd group of size 3
-- x is in range of d, hence is deleted too.
+Kata: https://www.codewars.com/kata/590b85b745eaa415e10000b1
 */
 
-export function survivors(arr: string[]): string {
-  
+declare var ICuboid: {
+  new (length: number): ICuboid;
+};
+
+interface ICuboid {
+  /** Length of the cube */
+  length: number;
+  /** Surface area of the cube */
+  surfaceArea: number;
+  /** Volume of the cube */
+  volume: number;
+}
+
+export class Cube implements ICuboid {
+  // TODO:
 }

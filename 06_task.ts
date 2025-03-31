@@ -1,44 +1,28 @@
-/* ------------- Survivors Ep. 4 ---------------------
+/* ---------------- Learning TS: Classes & Interfaces. Getters ------------------
+*** Task ***
+Define the following classes:
 
-** Description**
-Consider some subject, who has some initial momentum and is travelling through an array (powerups).
-momentum is an integer that represents the "distance" the subject can travel through the array. Each index travelled requires one unit of momentum. (The subject starts outside of the array, so it requires 1 momentum to get to index 0).
-powerups is an array of integers which the subject is travelling through. At each index, the value there is added to the subject's total momentum.
-If at any point through the array, the subject's momentum is below 1, the subject stops there, and does not successfully make it through. If the subject does make it to the last index of the array, with at least 1 momentum remaining (required to leave the array), it has successfully reached the "other side".
+* I. Cuboid *
+The object constructor for the class Cuboid should receive exactly three arguments in the following order: length, width, height and store these three values in this.length, this.width and this.height respectively.
+The class Cuboid should then have a getter surfaceArea which returns the surface area of the cuboid and a getter volume which returns the volume of the cuboid.
 
-** Examples **
-- momentum = 3 and powerups = [0,0,0] - No success (it finished in the last index).
-- momentum = 3 and powerups = [0,1,0] - Success
+* II. Cube *
+Class Cube is a subclass of class Cuboid. The constructor function of Cube should receive one argument only, its length, and use that value passed in to set this.length, this.width and this.height.
+Hint: Make a call to super, passing in the correct arguments, to make life easier ;)
 
-** Resume **
-You are given a list of momentum listOfMomentum and a list of powerups listOfPowerups(a 2D list of numbers). You have to check it for each pair of listOfMomentum[index] and listOfPowerups[index].
-Return indexes of sublists where there was enough momentum.
+* Articles of Interest *
+Below are some articles of interest that may help you complete this Kata:
+- Stack Overflow - What are getters and setters in ES6?: https://stackoverflow.com/questions/28222276/what-are-getters-and-setters-for-in-ecmascript-6-classes
+- getter - Javascript | MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get
 
-** Notes **
-- The sublists in listOfPowerups can be of a different length.
-- listOfMomentum will be of same length as listOfPowerups.
-- listOfMomentum and sublists of listOfPowerups only contain integers from 0 to 9.
-- There can be duplicated numbers.
-- The numbers in the result must be in order.
-
-** Example for **
-listOfMomentum = [3, 2, 1, 0]  and listOfPowerups = [[1, 0, 0], [0, 2, 0, 0], [0, 9], [8, 8]
-
-listOfMomentum[0] = 3
-listOfPowerups[0]  = [1, 0, 0]
-
-listOfMomentum[1] = 2
-listOfPowerups[1]  = [0, 2, 0, 0]
-
-listOfMomentum[2] = 1
-listOfPowerups[2]  = [0, 9]
-
-listOfMomentum[3] = 0
-listOfPowerups[3]  = [8, 8]
-
-So, the output will be [0]
+Kata: https://www.codewars.com/kata/599d636e607719edf600010a
 */
 
-export function survivors(listOfMomentum: number[], listOfPowerups: number[][]): number[] {
-
-}
+export class Cuboid {
+    // TODO:
+  }
+  
+  export class Cube extends Cuboid {
+    // TODO:
+  }
+  

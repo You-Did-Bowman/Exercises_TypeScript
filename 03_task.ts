@@ -1,23 +1,41 @@
-/* --------------------- Last Survivor ----------------------
+/* --------------------- Learning TS: Classes & Interfaces. Implement interfaces mehods ----------------------
 
-You are given a string of letters and an array of numbers.
-The numbers indicate positions of letters that must be removed, in order, starting from the beginning of the array.
-After each removal the size of the string decreases (there is no empty space).
-Return the only letter left.
+*** Overview ***
+One of TypeScript’s core principles is that type-checking focuses on the shape that values have. This is sometimes called “duck typing” or “structural subtyping”. In TypeScript, interfaces fill the role of naming these types, and are a powerful way of defining contracts within your code as well as contracts with code outside of your project.
 
-** Example **
-let str = "zbk", arr = [0, 1]
-    str = "bk", arr = [1]
-    str = "b", arr = []
-    return 'b'
+*** Task ***
+You are given an interface IGeometricFigure:
+```
+interface IGeometricFigure {
+  // Calculates area of the figure 
+  area: () => number;
+  // Calculates perimeter of the figure
+  perimeter: () => number;
+}
+```
+Your task is to implement classes Square and Circle:
+```
+export class Square implements IGeometricFigure {
+  // TODO:
+}
 
-** Notes **
-- The given string will never be empty.
-- The length of the array is always one less than the length of the string.
-- All numbers are valid.
-- There can be duplicate letters and numbers.
+export class Circle implements IGeometricFigure {
+  // TODO:
+}
+```
+
+Kata: https://www.codewars.com/kata/591305520c6f9f5c93000052
 */
 
-export function lastSurvivor(letters: string, coords: number[]): string {
-  
+interface IGeometricFigure {
+  area: () => number;
+  perimeter: () => number;
+}
+
+export class Square implements IGeometricFigure {
+  // TODO:
+}
+
+export class Circle implements IGeometricFigure {
+  // TODO:
 }

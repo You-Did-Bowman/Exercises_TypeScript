@@ -1,25 +1,67 @@
-/* --------------- BASIC: Making Six Toast -----------------
+/* --------------- Learning TS: Basic Types. Type Assertions -----------------
 
-** Story **
-You are going to make toast fast, you think that you should make multiple pieces of toasts and once. So, you try to make 6 pieces of toast.
-Problem:
+*** Overview ***
+Sometimes you’ll end up in a situation where you’ll know more about a value than TypeScript does. Usually this will happen when you know the type of some entity could be more specific than its current type.
+Type assertions are a way to tell the compiler “trust me, I know what I’m doing.” A type assertion is like a type cast in other languages, but performs no special checking or restructuring of data. It has no runtime impact, and is used purely by the compiler. TypeScript assumes that you, the programmer, have performed any special checks that you need.
+Type assertions have two forms. One is the “angle-bracket” syntax:
+```
+let someValue: any = "this is a string";
+let strLength: number = (<string>someValue).length;
+```
+And the other is the as-syntax:
+```
+let someValue: any = "this is a string";
+let strLength: number = (someValue as string).length;
+```
+The two samples are equivalent. Using one over the other is mostly a choice of preference; however, when using TypeScript with JSX, only as-style assertions are allowed.
 
-You forgot to count the number of toast you put into there, you don't know if you put exactly six pieces of toast into the toasters.
 
-Define a function that counts how many more (or less) pieces of toast you need in the toasters. Even though you need more or less, the number will still be positive, not negative.
+*** Task ***
+You are given the following code:
+```
+export class SuccessServerResult {
+  constructor (public httpCode: number, public resultObject:Object) {}
+}
 
+export class ErrorServerResult {
+  constructor (public httpCode: number, public message:string) {}
+}
 
-** Examples **
+export function getResult(result: SuccessServerResult) {
+  if (result.httpCode === 200) {
+    // Returning result.resultObject if everything is OK
+    return result.resultObject;
+  } else {
+    // Returning result.message in case of error
+    // FIXME: help TypeScript Compiler to understand that result here 
+    // is the instance of ErrorServerResult...
+    return result.message;
+  }
+}
+```
+Your task is to find and fix error in function getResult.
 
-You must return the number of toast the you need to put in (or to take out). In case of 5 you can still put 1 toast in:
+HINT: Try to use double assertion - first convert it to any and then convert it to ErrorServerResult.
 
-> 5 --> 1
-
-And in case of 12 you need 6 toasts less (but not -6):
-
-> 12 --> 6
+Kata: https://www.codewars.com/kata/5916b952e76dc9cbcb000066
 */
 
-export function sixToast(num:number):number {
-    return "you code here"
+export class SuccessServerResult {
+  constructor(public httpCode: number, public resultObject: Object) {}
+}
+
+export class ErrorServerResult {
+  constructor(public httpCode: number, public message: string) {}
+}
+
+export function getResult(result: SuccessServerResult) {
+  if (result.httpCode === 200) {
+    // Returning resultObject if everything is OK
+    return result.resultObject;
+  } else {
+    // Returning result.message in case of error
+    // FIXME: help TypeScript Compiler to understand that result here
+    // is the instance of ErrorServerResult...
+    return result.message;
   }
+}

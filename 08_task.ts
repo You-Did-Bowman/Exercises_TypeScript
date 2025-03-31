@@ -1,23 +1,21 @@
-/* ------------------- Grasshopper - Grade book ---------------
+/* ---------------- Learning TS: Classes & Interfaces. Singletons ------------- 
 
-Grade book
+*** Overview *** 
+In software engineering, the singleton pattern is a software design pattern that restricts the instantiation of a class to one object. This is useful when exactly one object is needed to coordinate actions across the system. The concept is sometimes generalized to systems that operate more efficiently when only one object exists, or that restrict the instantiation to a certain number of objects.
+An implementation of the singleton pattern must:
+- ensure that only one instance of the singleton class ever exists;
+- and provide global access to that instance.
 
-Complete the function so that it finds the average of the three scores passed to it and returns the letter value associated with that grade.
-Numerical Score 	Letter Grade
-90 <= score <= 100 	'A'
-80 <= score < 90 	'B'
-70 <= score < 80 	'C'
-60 <= score < 70 	'D'
-0 <= score < 60 	'F'
+Typically, this is done by:
+- declaring all constructors of the class to be private (or throw an error in constructor); and
+- providing a static method that returns a reference to the instance.
 
-Tested values are all between 0 and 100. Theres is no need to check for negative values or values greater than 100.
+*** Task *** 
+Your task is to implement SingletonCounter class with static method getInstance that returns instance of SingletonCounter. Constructor of this class must be declared as private. This class should have inc() which increments the value of the counter (default value of the counter is zero).
 
-Examples: 
-getGrade(95, 90, 93) // A
-getGrade(70, 70, 100) // B
-getGrade(44, 55, 52) // F
+Kata: https://www.codewars.com/kata/591445324670baed3200008d
 */
 
-export function getGrade(a: number, b: number, c: number): string {
-    // your code here
+export class SingletonCounter {
+    // TODO:
   }
